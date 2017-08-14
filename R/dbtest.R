@@ -137,7 +137,8 @@ run_script <- function(connection_name, test_directory){
       Schema = db$Schema,
       UID  = db$UID,
       PWD = db$PWD,
-      Port = db$Port)
+      Port = db$Port,
+      dsn = db$dsn)
   }
 
   results <- testthat::test_dir(test_directory, reporter = "minimal")
