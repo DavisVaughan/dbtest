@@ -171,11 +171,11 @@ test_that("between()",{
 })
 
 test_that("pmin()",{
-  expect_mutate_equivalent(pmin(fld_binary, fld_integer, fld_double))
+  expect_mutate_equivalent(pmin(fld_binary, fld_integer))
 })
 
 test_that("pmax()",{
-  expect_mutate_equivalent(pmax(fld_binary, fld_integer, fld_double))
+  expect_mutate_equivalent(pmax(fld_binary, fld_integer))
 })
 
 
