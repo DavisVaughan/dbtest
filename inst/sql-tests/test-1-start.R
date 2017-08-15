@@ -13,7 +13,17 @@ test_table <<- test_data()
 
 test_that("copy_to()",{
   expect_silent({
-    dplyr::copy_to(con, test_table, table_name, temporary = FALSE)
+    dbplyr::db_copy_to(con = con, table = table_name, values = test_table, temporary = FALSE,
+                   types = c(fld_factor = "VARCHAR",
+                             fld_datetime = "DATETIME",
+                             fld_date = "DATETIME",
+                             fld_time = "VARCHAR",
+                             fld_binary = "LONG",
+                             fld_integer = "LONG",
+                             fld_double = "DOUBLE",
+                             fld_character = "VARCHAR",
+                             fld_logical = "LONG"
+                             ))
   })
 })
 
